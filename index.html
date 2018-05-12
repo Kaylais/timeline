@@ -34,13 +34,7 @@
 <span class="first">여개모각코 회고 타임라인 <span class="userName"></span></span>
 <ul id="timeline" class="timeline">
   <li v-for="item in items">
-    <div class="avatar">
-      <!--<img :src="item.avatar">-->
-      <img src="images/kaylais.jpg">
-      <div class="hover">
-        <i class="fa fa-github fa-2x"></i>
-      </div>
-    </div>
+    <cmp-avatar></cmp-avatar>
     <div class="bubble-container">
       <div class="bubble">
         <h3 class="pink-color">@{{item.github}}</h3> {{item.date}}<br />
@@ -67,7 +61,17 @@
 </ul>
 
 <script>
-  var timeline = new Vue({
+  var cmpList = {
+    'cmp-avatar' : {
+      template: '<div class="avatar">'
+              + '<img src="images/kaylais.jpg">'
+              + '<div class="hover">'
+              + '<i class="fa fa-github fa-2x"></i>'
+              + '</div>'
+              + '</div>'
+    }
+  }
+  var vm = new Vue({
     el: '#timeline',
     data: {
       items: []
@@ -80,8 +84,10 @@
         var _this = this;
         _this.items = timelineList;
       }
-    }
+    },
+    components: cmpList
   });
+
 </script>
 
 </body>
