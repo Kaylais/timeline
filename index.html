@@ -22,7 +22,6 @@
       .on('child_added', function (data) {
         item = data.val();
         item['key'] = data.key;
-        console.log(item);
         timelineList.push(item);
       });
 
