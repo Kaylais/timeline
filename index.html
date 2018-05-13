@@ -46,11 +46,7 @@
             <h4><i class="fa fa-check"></i> 회고</h4>
             <div>{{item.review}}</div>
           </div>
-          <div class="over-bubble">
-            <i class="fa fa-envelope action"></i>
-            <i class="fa fa-github action"></i>
-            <i class="fa fa-star"></i>
-          </div>
+          <cmp-over-bubble></cmp-over-bubble>
         </div>
       </div>
 
@@ -61,15 +57,14 @@
 
 <script>
   var cmpList = {
-    'cmp-avatar' : {
-      template: '<div class="avatar">'
-              + '<img src="images/kaylais.jpg">'
-              + '<div class="hover">'
-              + '<i class="fa fa-github fa-2x"></i>'
-              + '</div>'
-              + '</div>'
+    'cmp-avatar': {
+      template: '<div class="avatar"><img src="images/kaylais.jpg"><div class="hover"><i class="fa fa-github fa-2x"></i></div></div>'
+    },
+    'cmp-over-bubble': {
+      template: '<div class="over-bubble"><i class="fa fa-envelope action"></i><i class="fa fa-github action"></i><i class="fa fa-star"></i></div>'
     }
-  }
+  };
+
   var vm = new Vue({
     el: '#timeline',
     data: {
